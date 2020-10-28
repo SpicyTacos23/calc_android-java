@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/background_dark"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:contentDescription="@string/logo_name"
+        app:srcCompat="@drawable/logo_app"
+        android:layout_marginBottom="30dp"/>
+
+    <EditText
+        android:id="@+id/campo1"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="20dp"
+        android:autofillHints="@string/title"
+        android:background="@android:color/background_light"
+        android:hint="Ingrese numero 1"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/campo2"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="10dp"
+        android:autofillHints="@string/title"
+        android:background="@android:color/background_light"
+        android:hint="Ingrese numero 2"
+        android:inputType="number" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp">
+
+        <Button
+            android:id="@+id/botonSuma"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="50dp"
+            android:text="+"
+            android:layout_marginStart="50dp"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/botonResta"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/botonSuma"
+            android:layout_toRightOf="@+id/botonSuma"
+            android:text="-"
+            android:onClick="onClick"/>/>
+
+        <Button
+            android:id="@+id/botonMult"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/botonResta"
+            android:layout_toRightOf="@+id/botonResta"
+            android:text="*"
+            android:onClick="onClick"/>/>
+
+        <Button
+            android:id="@+id/botonDivi"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/botonMult"
+            android:layout_toRightOf="@+id/botonMult"
+            android:text="/"
+            android:onClick="onClick"/>/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/etiResultado"
+        android:layout_width="391dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
+        android:text="Resultado:"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+
+</LinearLayout>
