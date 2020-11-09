@@ -2,6 +2,8 @@ package com.example.operacionesmatematicas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,10 +25,25 @@ public class MainActivity extends AppCompatActivity {
         campo1 = (EditText) findViewById(R.id.campo1);
         campo2 = (EditText) findViewById(R.id.campo2);
         etiResultado = (TextView) findViewById(R.id.etiResultado);
+
+        //Declaramos el botón de redirección
+        Button return1 = (Button) findViewById(R.id.return1);
+        return1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openItemsActivity();
+            }
+        });
+    }
+
+    //Acción del botón para abrir la pantalla de materiales.
+    public void openItemsActivity() {
+        Intent intent = new Intent(this, MainItems.class);
+        startActivity(intent);
     }
 
     public void onClick(View view) {
-
+        Button return1 = (Button) findViewById(R.id.return1);
         num1 = Integer.parseInt(campo1.getText().toString());
         num2 = Integer.parseInt(campo2.getText().toString());
 
@@ -44,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
                 dividir();
                 break;
         }
-
     }
 
     private void sumar() {
@@ -63,12 +79,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void dividir() {
-
-        if(num2>0 && num1>0) {
+        if (num2 > 0 && num1 > 0) {
             int division = num1 / num2;
             etiResultado.setText("El resultado de la division es: " + division);
-        }else {
-            Toast.makeText(this, "No puedes dividir por 0",Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "No puedes dividir por 0", Toast.LENGTH_LONG).show();
             etiResultado.setText("No puedes dividir por 0");
         }
     }
